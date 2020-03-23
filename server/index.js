@@ -3,6 +3,7 @@ const ctrl = require("./controllers/messages_controller");
 
 const app = express();
 app.use(express.json());
+app.use(express.static(__dirname + "/../public/build"));
 
 const msgBaseUrl = "/api/messages";
 app.post(msgBaseUrl, ctrl.create);
